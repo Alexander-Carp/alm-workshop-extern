@@ -1,7 +1,9 @@
 name: Golang Docker Build
 
 on:
-  # LET THE PIPELINE TRIGGER ON A PUSH TO ALL BRANCHES
+  push:
+    branches:
+      - "**"
 
 env:
   CONTAINER_REPOSITORY: quay.io/Carp_Alexander # PUT YOUR OWN USERNAME HERE
