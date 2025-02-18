@@ -26,7 +26,7 @@ jobs:
         uses: docker/metadata-action@v4
         id: meta
         with:
-          images: <<TODO>>
+          images: quay.io/Carp_Alexander/alm-workshop
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
