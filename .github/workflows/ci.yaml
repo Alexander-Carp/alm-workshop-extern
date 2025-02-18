@@ -21,14 +21,14 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: quay.io
-          username: robert
+          username: carp_alexander+robert
           password: ${{ secret.robert_password }}
 
       - name: Extract metadata (tags, labels) for Docker
         uses: docker/metadata-action@v4
         id: meta
         with:
-          images: quay.io/Carp_Alexander/alm-workshop
+          images: quay.io/carp_alexander/alm-workshop
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
