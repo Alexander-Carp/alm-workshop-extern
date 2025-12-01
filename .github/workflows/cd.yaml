@@ -9,6 +9,7 @@ on:
 env:
   # ADD YOUR ENVIRONMENT VARIABLES HERE
   NAMESPACE: carp-alexander-dev
+  SWEATER_SCORE_DEFAULT: 7
 
 jobs:
   deploy:
