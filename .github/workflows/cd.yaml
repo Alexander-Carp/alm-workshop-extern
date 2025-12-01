@@ -1,0 +1,31 @@
+name: Release Application
+
+on:
+  # ADD YOUR TRIGGER HERE
+  push:
+    branches:
+      - dev
+
+env:
+  # ADD YOUR ENVIRONMENT VARIABLES HERE
+  NAMESPACE: carp-alexander-dev
+
+jobs:
+  deploy:
+    if: # ADD YOUR CONDITION HERE
+    environment: development
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Login OpenShift
+        uses: redhat-actions/oc-login@v1
+        with:
+          openshift_server_url: https://api.rm1.0a51.p1.openshiftapps.com:6443
+          openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
+          namespace: carp-alexander-dev
+
+      - name: Apply Openshift YAML
+        run: |
+          # ADD YOUR COMMANDS HERE
