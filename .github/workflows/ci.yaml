@@ -1,9 +1,8 @@
 name: Golang Docker Build
 
 on:
-  push:
-    branches:
-      - "**"
+  release:
+    types: [published]
 
 env:
   CONTAINER_REPOSITORY: quay.io/carp_alexander # PUT YOUR OWN USERNAME HERE
